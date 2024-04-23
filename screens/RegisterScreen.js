@@ -14,7 +14,7 @@ import {
   import { AntDesign } from "@expo/vector-icons";
   import { Ionicons } from "@expo/vector-icons";
   import { useNavigation } from "@react-navigation/native";
-//   import axios from "axios";
+  import axios from "axios";
   
   const RegisterScreen = () => {
     const [email, setEmail] = useState("");
@@ -27,26 +27,27 @@ import {
         email: email,
         password: password,
       };
-  
-    //   axios
-    //     .post("http://localhost:3000/register", user)
-    //     .then((response) => {
-    //       console.log(response);
-    //       Alert.alert(
-    //         "Registration successful",
-    //         "you have been registered successfully"
-    //       );
-    //       setName("");
-    //       setEmail("");
-    //       setPassword("");
-    //     })
-    //     .catch((error) => {
-    //       Alert.alert(
-    //         "Registration failed",
-    //         "An error occurred during registration"
-    //       );
-    //       console.log("error", error);
-    //     });
+      
+      axios.post("http://localhost:3000/register", user)
+    .then((response) => {
+      console.log(response);
+      Alert.alert(
+        "Registration successful",
+        "You have been registered successfully"
+      );
+      // Clear input fields after successful registration
+      setName("");
+      setEmail("");
+      setPassword("");
+    })
+    .catch((error) => {
+      console.error("Registration failed", error);
+      Alert.alert(
+        "Registration failed",
+        "An error occurred during registration. Please try again later."
+      );
+    });
+
     };
     return (
       <SafeAreaView
