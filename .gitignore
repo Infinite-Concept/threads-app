@@ -33,3 +33,8 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+
+./api/.env
+
+#APP_PASSWORD = "ecfmdubuajvktcdc" API_MONGO = "mongodb+srv://ifenowoifesegun:ifenowoifesegun@cluster0.ywxmand.mongodb.net/"
