@@ -1,5 +1,3 @@
-
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -70,7 +68,7 @@ const sendVerificationEmail = async (email, verificationToken) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "sujananand0@gmail.com",
+      user: "ifenowoifesegun@gmail.com",
       pass: process.env.APP_PASSWORD,
     },
   });
