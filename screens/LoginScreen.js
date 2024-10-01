@@ -8,6 +8,7 @@ import {
   TextInput,
   Pressable,
   Alert,
+  Platform,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -44,7 +45,7 @@ const LoginScreen = () => {
     };
 
     axios
-      .post("http://192.168.8.120:3000/login", user)
+      .post("http://192.168.1.42:3000/login", user)
       .then((response) => {
         console.log(response);
         const token = response.data.token;
@@ -69,7 +70,7 @@ const LoginScreen = () => {
         />
       </View>
 
-      <KeyboardAvoidingView>
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <View style={{ alignItems: "center", justifyContent: "center" }}>
           <Text style={{ fontSize: 17, fontWeight: "bold", marginTop: 25 }}>
             Login to Your Account

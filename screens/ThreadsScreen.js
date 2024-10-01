@@ -24,7 +24,7 @@ const ThreadsScreen = () => {
     }
 
     axios
-      .post("http://192.168.8.120:3000/create-post", postData)
+      .post("http://192.168.1.42:3000/create-post", postData)
       .then((response) => {
         setContent("");
       })
